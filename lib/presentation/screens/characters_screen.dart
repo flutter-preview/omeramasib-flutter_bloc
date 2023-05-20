@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class CharacterScreen extends StatelessWidget {
+  const CharacterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-
+    return Scaffold(
+      body:  Center(child: Text('Character Screen')),
     );
   }
 }

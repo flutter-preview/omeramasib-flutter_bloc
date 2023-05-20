@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_block/presentation/screens/characters_screen.dart';
+
+import 'constants/strings.dart';
+import 'presentation/screens/characters_details.dart';
 class AppRouter{
-  Route generateRoute (RouteSettings settings){
+  Route? generateRoute(RouteSettings settings){
    switch (settings.name){
-     case '/':
-       return MaterialPageRoute(builder: (_) => MovieList());
-     case '/movie':
-       var movieId = settings.arguments;
-       return MaterialPageRoute(builder: (_) => MovieDetail(movieId: movieId));
-     default:
-       return MaterialPageRoute(builder: (_) => MovieList());
+     case characterScreen:
+       return MaterialPageRoute(builder: (_) => const CharacterScreen());
+      case characterDetailsScreen:
+        return MaterialPageRoute(builder: (_) => const CharacterDetailsScreen());
    }
   }
 }
