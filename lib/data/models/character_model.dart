@@ -1,15 +1,15 @@
 class CharacterModel {
   Info? info;
-  List<Results>? results;
+  List<Character>? characters;
 
-  CharacterModel({this.info, this.results});
+  CharacterModel({this.info, this.characters});
 
   CharacterModel.fromJson(Map<String, dynamic> json) {
     info = json['info'] != null ? new Info.fromJson(json['info']) : null;
-    if (json['results'] != null) {
-      results = <Results>[];
-      json['results'].forEach((v) {
-        results!.add(new Results.fromJson(v));
+    if (json['characters'] != null) {
+      characters = <Character>[];
+      json['characters'].forEach((v) {
+        characters!.add(new Character.fromJson(v));
       });
     }
   }
@@ -19,8 +19,8 @@ class CharacterModel {
     if (this.info != null) {
       data['info'] = this.info!.toJson();
     }
-    if (this.results != null) {
-      data['results'] = this.results!.map((v) => v.toJson()).toList();
+    if (this.characters != null) {
+      data['characters'] = this.characters!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -51,7 +51,7 @@ class Info {
   }
 }
 
-class Results {
+class Character {
   int? id;
   String? name;
   String? status;
@@ -65,7 +65,7 @@ class Results {
   String? url;
   String? created;
 
-  Results(
+  Character(
       {this.id,
       this.name,
       this.status,
@@ -79,7 +79,7 @@ class Results {
       this.url,
       this.created});
 
-  Results.fromJson(Map<String, dynamic> json) {
+  Character.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     status = json['status'];
