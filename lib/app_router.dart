@@ -17,14 +17,14 @@ class AppRouter {
         CharactersRepository(charactersApis: CharactersApis());
     charactersCubit = CharactersCubit(charactersRepository);
   }
-  
+
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case characterScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (BuildContext context) =>
-                CharactersCubit(charactersRepository),
+                charactersCubit,
             child:  CharacterScreen(charactersRepository),
           ),
         );
@@ -32,5 +32,6 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => const CharacterDetailsScreen());
     }
+    return null;
   }
 }

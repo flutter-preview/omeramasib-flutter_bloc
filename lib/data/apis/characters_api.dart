@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter_block/constants/strings.dart';
 
-import '../models/character_model.dart';
 
 class CharactersApis {
   final dio = Dio();
